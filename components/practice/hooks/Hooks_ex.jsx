@@ -58,3 +58,147 @@ export const Hooks_ex1 = () => {
     </div>
   );
 };
+
+// Exercise 2: Input Mirror
+
+// Create an input field
+// Display what user types in real-time below it
+// Add a "Clear" button
+// Show character count
+
+// Exercise 3: Multiple Counters
+
+// Create 3 separate counters on the same page
+// Each should have its own +/- buttons
+// Each maintains its own count independently
+
+// Exercise 4: Color Picker
+
+// Three inputs for RGB values (0-255)
+// Display a box with that color as background
+// Show the hex code
+// Bonus: Add a reset to white button
+
+// Exercise 5: Simple Calculator
+
+// Two number inputs
+// Four buttons: +, -, ×, ÷
+// Display result
+// Handle division by zero
+
+
+// Buggy Code - Find the Hook Mistakes
+// Bug #1: Counter Not Updating
+// jsximport { useState } from 'react';
+
+// function Counter() {
+//   const [count, setCount] = useState(0);
+
+//   const addThree = () => {
+//     setCount(count + 1);
+//     setCount(count + 1);
+//     setCount(count + 1);
+//   };
+
+//   return (
+//     <div>
+//       <h2>Count: {count}</h2>
+//       <button onClick={addThree}>Add 3</button>
+//     </div>
+//   );
+// }
+// Question: Click the button. Does it add 3? Why or why not?
+
+// Bug #2: Input Not Working
+// jsximport { useState } from 'react';
+
+// function NameInput() {
+//   const [name, setName] = useState('');
+
+//   return (
+//     <div>
+//       <input type="text" placeholder="Enter name" />
+//       <p>Hello, {name}!</p>
+//     </div>
+//   );
+// }
+// Question: Type in the input. Does "Hello" update?
+
+// Bug #3: Reset Not Working
+// jsximport { useState } from 'react';
+
+// function TextInput() {
+//   const [text, setText] = useState('');
+
+//   const handleClear = () => {
+//     setText('');
+//   };
+
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         onChange={(e) => setText(e.target.value)}
+//       />
+//       <button onClick={handleClear}>Clear</button>
+//       <p>You typed: {text}</p>
+//     </div>
+//   );
+// }
+// Question: Type something, then click Clear. Does the input clear?
+
+// Bug #4: Counter Going Crazy
+// jsximport { useState } from 'react';
+
+// function Counter() {
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <div>
+//       <h2>Count: {count}</h2>
+//       <button onClick={setCount(count + 1)}>Increment</button>
+//     </div>
+//   );
+// }
+// Question: What happens when this component loads?
+
+// Bug #5: Double Counter
+// jsximport { useState } from 'react';
+
+// function DoubleCounter() {
+//   const [count, setCount] = useState(0);
+
+//   const incrementTwice = () => {
+//     setCount(count + 1);
+//     setCount(count + 1);
+//   };
+
+//   return (
+//     <div>
+//       <h2>Count: {count}</h2>
+//       <button onClick={incrementTwice}>+2</button>
+//     </div>
+//   );
+// }
+// Question: Does clicking the button increase count by 2?
+
+// Bug #6: Previous Value
+// jsximport { useState } from 'react';
+
+// function FastCounter() {
+//   const [count, setCount] = useState(0);
+
+//   const addFive = () => {
+//     for (let i = 0; i < 5; i++) {
+//       setCount(count + 1);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h2>Count: {count}</h2>
+//       <button onClick={addFive}>Add 5</button>
+//     </div>
+//   );
+// }
+// Question: Does it really add 5?
